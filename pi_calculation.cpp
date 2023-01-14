@@ -3,6 +3,8 @@
 #include <iostream>
 #include <stdlib.h>
 
+#include <random>
+
 #define sqr(x) ((x) * (x))
 #define DEFAULT_NUMBER_OF_POINTS "12345678"
 
@@ -26,7 +28,10 @@ uint get_points_in_circle(uint n, uint random_seed) {
 void piCalculation(uint n) {
   timer serial_timer;
   double time_taken = 0.0;
-  uint random_seed = 1;
+  // uint random_seed = 1;
+
+  std::random_device rand_dev;
+  uint random_seed = rand_dev();
 
   serial_timer.start();
   // Create threads and distribute the work across T threads
@@ -54,8 +59,7 @@ void piCalculation(uint n) {
 
 int main(int argc, char *argv[]) {
   // Initialize command line arguments
-  cxxopts::Options options("pi_calculation",
-                           "Calculate pi using serial and parallel execution");
+  cxxopts::Options options("pi_calculation", "Calculate pi using serial and parallel execution");
   options.add_options(
       "custom",
       {
@@ -63,7 +67,8 @@ int main(int argc, char *argv[]) {
            cxxopts::value<uint>()->default_value(DEFAULT_NUMBER_OF_POINTS)},
           {"nWorkers", "Number of workers",
            cxxopts::value<uint>()->default_value(DEFAULT_NUMBER_OF_WORKERS)},
-      });
+      }
+  );
 
   auto cl_options = options.parse(argc, argv);
   uint n_points = cl_options["nPoints"].as<uint>();
