@@ -1,7 +1,7 @@
-
-ifdef USE_INT
+# TODO: Change back to original make file.
+# ifdef USE_INT
 MACRO = -DUSE_INT
-endif
+# endif
 
 #compiler setup
 CXX = g++
@@ -12,7 +12,8 @@ CXXFLAGS = -std=c++14 -Og -pthread $(MACRO) -Wall -Werror -Wno-error=unknown-pra
 
 COMMON= core/utils.h core/cxxopts.h core/get_time.h core/graph.h core/quick_sort.h
 SERIAL= pi_calculation triangle_counting page_rank
-PARALLEL= pi_calculation_parallel # TODO: Add these back in: triangle_counting_parallel page_rank_parallel page_rank_parallel_atomic
+PARALLEL= pi_calculation_parallel page_rank_parallel # page_rank_parallel_atomic
+## PARALLEL= pi_calculation_parallel # TODO: Add these back in: triangle_counting_parallel page_rank_parallel page_rank_parallel_atomic
 ALL= $(SERIAL) $(PARALLEL)
 
 
