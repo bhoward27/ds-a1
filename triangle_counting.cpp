@@ -60,9 +60,14 @@ void triangleCountSerial(Graph &g)
     time_taken = t1.stop();
     // -------------------------------------------------------------------
     // Here, you can just print the number of non-unique triangles counted by each
-    // thread std::cout << "thread_id, triangle_count, time_taken\n"; Print the
-    // above statistics for each thread Example output for 2 threads: thread_id,
-    // triangle_count, time_taken 1, 102, 0.12 0, 100, 0.12
+    // thread
+    // std::cout << "thread_id, triangle_count, time_taken\n";
+    // Print the
+    // above statistics for each thread
+    // Example output for 2 threads:
+    // thread_id, triangle_count, time_taken
+    // 0, 100, 0.12
+    // 1, 102, 0.12
 
     // Print the overall statistics
     std::cout << "Number of triangles : " << triangle_count << "\n";
