@@ -3,6 +3,7 @@ pi_calculation_parallel
 
 page_rank
 page_rank_parallel
+page_rank_parallel_atomic
 
 triangle_counting
 triangle_counting_parallel
