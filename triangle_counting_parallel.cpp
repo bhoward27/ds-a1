@@ -162,8 +162,7 @@ int main(int argc, char *argv[])
                      cxxopts::value<uint>()->default_value(DEFAULT_NUMBER_OF_WORKERS)},
                     {"inputFile", "Input graph file path",
                      cxxopts::value<std::string>()->default_value(
-                    // TODO: Add back in!         "/scratch/input_graphs/roadNet-CA")},
-                    "/home/ben/Documents/SFU/cmpt-431/assignments/1/default_page_rank_graph/roadNet-CA")},
+                    "/scratch/input_graphs/roadNet-CA")},
             });
 
     auto cl_options = options.parse(argc, argv);
